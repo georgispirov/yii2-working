@@ -26,8 +26,10 @@ use yii\web\IdentityInterface;
  * @property string $password
  * @property string $re_password
  * @property string $email
+ * @property integer $country_id
  *
  * @property Cities $city
+ * @property Country $country
  * @property Gender $gender
  */
 class Users extends ActiveRecord implements IdentityInterface
@@ -70,7 +72,7 @@ class Users extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['age', 'gender_id', 'created_at', 'updated_at', 'city_id'], 'integer'],
+            [['age', 'gender_id', 'created_at', 'updated_at', 'city_id', 'country_id'], 'integer'],
             [['username'], 'string', 'max' => 75],
             [['ip_address'], 'string', 'max' => 20],
             [['first_name', 'last_name'], 'string', 'max' => 105],
@@ -101,6 +103,7 @@ class Users extends ActiveRecord implements IdentityInterface
             'password' => 'Password',
             'email' => 'Email',
             're_password' => 'Re Password',
+            'country_id' => 'Country'
         ];
     }
 

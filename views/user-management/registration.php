@@ -1,6 +1,7 @@
 <?php
 
 use app\models\Cities;
+use app\models\Country;
 use app\models\Gender;
 use app\models\RegistrationForm;
 use kartik\slider\Slider;
@@ -42,7 +43,7 @@ $this->params['breadcrumbs'] = $this->title;
     ]) ?>
     <?= $form->field($model, 'gender_id')->dropDownList(ArrayHelper::map(Gender::find()->all(), 'id', 'name')) ?>
     <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(Cities::find()->all(), 'id', 'name')) ?>
-    <?= $form->field($model, 'country_id') ?>
+    <?= $form->field($model, 'country_id')->dropDownList(ArrayHelper::map(Country::find()->all(), 'id', 'name')); ?>
     <?= $form->field($model, 'password')->passwordInput() ?>
     <?= $form->field($model, 're_password')->passwordInput() ?>
 
