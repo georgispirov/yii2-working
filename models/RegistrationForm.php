@@ -33,6 +33,7 @@ class RegistrationForm extends Model
     public $age;
     public $city_id;
     public $gender_id;
+    public $country_id;
 
     /**
      * @return array
@@ -41,7 +42,7 @@ class RegistrationForm extends Model
     {
         return [
             [['username', 'first_name', 'last_name', 'password' ,
-              're_password', 'email', 'age', 'city_id', 'gender_id'], 'required'],
+              're_password', 'email', 'age', 'city_id', 'gender_id', 'country_id'], 'required'],
             // username rules
             'usernameTrim'     => ['username', 'trim'],
             'usernameLength'   => ['username', 'string', 'min' => 6, 'max' => 255],
@@ -77,6 +78,7 @@ class RegistrationForm extends Model
             'city_id'     => 'City',
             'gender_id'   => 'Gender',
             'last_name'   => 'Last Name',
+            'country_id'  => 'Country'
         ];
     }
 
@@ -96,7 +98,8 @@ class RegistrationForm extends Model
             're_password' => Yii::$app->getSecurity()->generatePasswordHash($this->re_password),
             'city_id'     => $this->city_id,
             'gender_id'   => $this->gender_id,
-            'age'         => $this->age
+            'age'         => $this->age,
+            'country_id'  => $this->country_id
         ]);
 
         return $model->save() ? $model : null;

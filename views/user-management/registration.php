@@ -2,16 +2,16 @@
 
 use app\models\Cities;
 use app\models\Gender;
+use app\models\RegistrationForm;
 use kartik\slider\Slider;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-use app\models\Users;
 use yii\web\View;
 
 /* @var $this View */
-/* @var $model Users */
+/* @var $model RegistrationForm */
 /* @var $form ActiveForm */
 
 $this->title = 'Registration';
@@ -42,6 +42,7 @@ $this->params['breadcrumbs'] = $this->title;
     ]) ?>
     <?= $form->field($model, 'gender_id')->dropDownList(ArrayHelper::map(Gender::find()->all(), 'id', 'name')) ?>
     <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(Cities::find()->all(), 'id', 'name')) ?>
+    <?= $form->field($model, 'country_id') ?>
     <?= $form->field($model, 'password')->passwordInput() ?>
     <?= $form->field($model, 're_password')->passwordInput() ?>
 

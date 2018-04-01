@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "78c37bac107fe8b54735dfaabb9a78d6",
+    "content-hash": "7be28c4213bbf6b7a56e58608494d7f5",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -353,6 +353,55 @@
                 "yii"
             ],
             "time": "2015-11-07T15:35:50+00:00"
+        },
+        {
+            "name": "sameer-shelavale/php-countries-array",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sameer-shelavale/php-countries-array.git",
+                "reference": "d5faa8e646df21ed4419c1fb793d9c39536c966b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sameer-shelavale/php-countries-array/zipball/d5faa8e646df21ed4419c1fb793d9c39536c966b",
+                "reference": "d5faa8e646df21ed4419c1fb793d9c39536c966b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SameerShelavale\\PhpCountriesArray\\": "src/"
+                },
+                "psr-4": {
+                    "SameerShelavale\\PhpCountriesArray\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "AGPL3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sameer Shelavale",
+                    "email": "samiirds@gmail.com"
+                }
+            ],
+            "description": "PHP class to get array of countries names with ISO_3166-1 alpha-2, alpha-3, numeric codes, ISD codes and continent",
+            "keywords": [
+                "ISD Codes",
+                "ISO_3166-1",
+                "List of countries",
+                "PHP countries array",
+                "alpha-2",
+                "alpha-3",
+                "continent",
+                "countries array"
+            ],
+            "time": "2016-04-12T11:23:30+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
