@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `country`.
  */
-class m180401_144804_create_country_table extends Migration
+class m180403_204601_create_country_table extends Migration
 {
     /**
      * {@inheritdoc}
@@ -13,8 +13,8 @@ class m180401_144804_create_country_table extends Migration
     public function safeUp()
     {
         $this->createTable('country', [
-            'id'   => $this->primaryKey(),
-            'name' => $this->string(55)->notNull()
+            'id' => $this->primaryKey(),
+            'name' => $this->string(100)->notNull()->unique()
         ]);
     }
 
