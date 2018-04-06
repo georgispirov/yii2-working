@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\LoginForm;
 use app\models\RegistrationForm;
 use app\models\Users;
 use Yii;
-use yii\helpers\VarDumper;
 use yii\web\Controller;
 
 class UserManagementController extends Controller
@@ -14,7 +14,19 @@ class UserManagementController extends Controller
 
     public function actionLogin()
     {
-        
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        }
+
+        $model->password = '';
+        return $this->render('login', [
+            'model' => $model,
+        ]);
     }
 
     public function actionRegistration()

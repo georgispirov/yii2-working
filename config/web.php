@@ -8,6 +8,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'defaultRoute' => '/home/index',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -23,6 +24,7 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\Users',
+            'enableAutoLogin' => false
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',

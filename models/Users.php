@@ -135,6 +135,11 @@ class Users extends ActiveRecord implements IdentityInterface
         return $this->hasOne(Gender::className(), ['id' => 'gender_id']);
     }
 
+    public static function find()
+    {
+        return new \app\queries\UsersQuery(get_called_class());
+    }
+
     /**
      * Finds an identity by the given ID.
      * @param string|int $id the ID to be looked for
@@ -196,8 +201,12 @@ class Users extends ActiveRecord implements IdentityInterface
         // TODO: Implement validateAuthKey() method.
     }
 
-    public function validatePassword()
+    /**
+     * @param string $password
+     * @return bool
+     */
+    public function validatePassword(string $password)
     {
-        return Yii::$app->getSecurity()->validatePassword($this->password, $this->re_password);
+        return Yii::$app->getSecurity()->validatePassword($password, $this->password);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use app\assets\AppAsset;
 use app\models\Cities;
 use app\models\Country;
 use app\models\Gender;
@@ -15,6 +16,7 @@ use yii\web\View;
 /* @var $model RegistrationForm */
 /* @var $form ActiveForm */
 
+AppAsset::register($this);
 $this->title = 'Registration';
 $this->params['breadcrumbs'] = $this->title;
 ?>
