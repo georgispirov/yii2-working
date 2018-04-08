@@ -1,10 +1,14 @@
 <?php
 
+use app\assets\HomeAsset;
+use app\helpers\UserAuthenticationProcessHelper;
 use yii\helpers\Html;
 use yii\web\View;
 
 /* @var $this View */
 /* @var $content string */
+
+HomeAsset::register($this);
 
 $this->beginPage(); ?>
 
@@ -18,8 +22,18 @@ $this->beginPage(); ?>
 </head>
 
 <?= $this->beginBody(); ?>
-<header>Application</header>
+
+<?= $this->render('homeLayoutPartials/headerContent') ?>
+<?= $this->render('homeLayoutPartials/generateSidenavMenu') ?>
+<?= $this->render('homeLayoutPartials/malavitaBodyLayout') ?>
+<?php
+    if (UserAuthenticationProcessHelper::isUserAuthenticated()) {
+        echo $this->render('homeLayoutPartials/heroStats');
+    }
+?>
+
 <?= $content; ?>
+
 <?= $this->endBody(); ?>
 </html>
 

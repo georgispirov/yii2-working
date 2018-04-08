@@ -9,6 +9,7 @@ $this->beginPage(); ?>
 
     <head>
         <meta charset="UTF-8"/>
+        <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title); ?></title>
         <?= $this->head(); ?>
     </head>

@@ -28,7 +28,7 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property integer $country_id
  *
- * @property Cities $city
+ * @property City $city
  * @property Country $country
  * @property Gender $gender
  */
@@ -62,7 +62,7 @@ class Users extends ActiveRecord implements IdentityInterface
                     ActiveRecord::EVENT_AFTER_UPDATE  => ['ip_address']
                 ]
             ],
-            EmailAfterRegisterBehavior::className()
+//            EmailAfterRegisterBehavior::className()
         ];
     }
 
@@ -79,7 +79,7 @@ class Users extends ActiveRecord implements IdentityInterface
             [['password', 're_password'], 'string', 'max' => 255],
             [['email'], 'string', 'max' => 155],
             [['username'], 'unique'],
-            [['city_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cities::className(), 'targetAttribute' => ['city_id' => 'id']],
+            [['city_id'], 'exist', 'skipOnError' => true, 'targetClass' => City::className(), 'targetAttribute' => ['city_id' => 'id']],
             [['gender_id'], 'exist', 'skipOnError' => true, 'targetClass' => Gender::className(), 'targetAttribute' => ['gender_id' => 'id']],
         ];
     }
@@ -124,7 +124,7 @@ class Users extends ActiveRecord implements IdentityInterface
      */
     public function getCity()
     {
-        return $this->hasOne(Cities::className(), ['id' => 'city_id']);
+        return $this->hasOne(City::className(), ['id' => 'city_id']);
     }
 
     /**

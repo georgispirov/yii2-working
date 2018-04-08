@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use yii\helpers\VarDumper;
 
 class LoginForm extends Model
 {
@@ -42,6 +43,10 @@ class LoginForm extends Model
 
     public function login()
     {
+        if (!$this->validate()) {
+            return false;
+        }
+
         return Yii::$app->getUser()->login($this->getUser(), $this->_rememberMe ? 3600 * 24 * 30 : 0);
     }
 

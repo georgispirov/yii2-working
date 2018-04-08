@@ -1,10 +1,11 @@
 <?php
 
 use app\assets\AppAsset;
-use app\models\Cities;
+use app\models\City;
 use app\models\Country;
 use app\models\Gender;
 use app\models\RegistrationForm;
+use kartik\depdrop\DepDrop;
 use kartik\slider\Slider;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -44,8 +45,17 @@ $this->params['breadcrumbs'] = $this->title;
             ]
     ]) ?>
     <?= $form->field($model, 'gender_id')->dropDownList(ArrayHelper::map(Gender::find()->all(), 'id', 'name')) ?>
-    <?= $form->field($model, 'city_id')->dropDownList(ArrayHelper::map(Cities::find()->all(), 'id', 'name')) ?>
-    <?= $form->field($model, 'country_id')->dropDownList(ArrayHelper::map(Country::find()->all(), 'id', 'name')); ?>
+    <?= $form->field($model, 'country_id')->dropDownList(ArrayHelper::map(Country::find()->all(), 'id', 'name'), ['id' => 'country-id']); ?>
+    <?=
+        $form->field($model, 'city_id')->widget(DepDrop::className(), [
+            'options' => ['id' => 'city-id'],
+            'pluginOptions' => [
+                'depends'     => ['country-id'],
+                'placeholder' => 'Select City',
+                'url'         => Url::to(['/city/get-city'])
+            ]
+        ]);
+    ?>
     <?= $form->field($model, 'password')->passwordInput() ?>
     <?= $form->field($model, 're_password')->passwordInput() ?>
 

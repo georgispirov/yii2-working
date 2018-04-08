@@ -45,11 +45,9 @@ class UserManagementController extends Controller
 
     public function actionLogout()
     {
-
-    }
-
-    public function actionStreaming()
-    {
-        return $this->render('streaming');
+        if (Yii::$app->getUser()->logout()) {
+            return $this->goHome();
+        }
+        return $this->redirect(Yii::$app->getRequest()->getReferrer());
     }
 }

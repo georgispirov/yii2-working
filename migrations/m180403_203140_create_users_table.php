@@ -31,7 +31,7 @@ class m180403_203140_create_users_table extends Migration
 
         $this->addForeignKey('fk-users-city_id', 'users', 'city_id', 'city', 'id', 'RESTRICT');
         $this->addForeignKey('fk-users-country_id', 'users', 'country_id', 'country', 'id', 'RESTRICT');
-        $this->addForeignKey('fk-users-gender_id', 'users', 'gender_id', 'country', 'id', 'RESTRICT');
+        $this->addForeignKey('fk-users-gender_id', 'users', 'gender_id', 'gender', 'id', 'RESTRICT');
     }
 
     /**

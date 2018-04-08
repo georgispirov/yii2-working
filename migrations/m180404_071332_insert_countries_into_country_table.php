@@ -1,5 +1,6 @@
 <?php
-use SameerShelavale\PhpCountriesArray\CountriesArray;
+
+use MenaraSolutions\Geographer\Earth;
 use yii\db\Migration;
 /**
  * Class m180404_071332_insert_countries_into_country_table
@@ -10,9 +11,13 @@ class m180404_071332_insert_countries_into_country_table extends Migration
      * @var array $countries
      */
     private $countries = [];
+
     public function init()
     {
-        $this->countries = CountriesArray::getFromContinent('alpha2', 'name', 'Europe');
+        $earth = new Earth();
+        foreach ($earth->getEurope()->toArray() as $item) {
+            $this->countries[] = $item['name'];
+        }
     }
     /**
      * {@inheritdoc}

@@ -13,14 +13,14 @@ use yii\db\ActiveRecord;
  *
  * @property Users[] $users
  */
-class Cities extends ActiveRecord
+class City extends ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'cities';
+        return 'city';
     }
 
     /**
@@ -42,7 +42,7 @@ class Cities extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'id'   => 'ID',
             'name' => 'Name',
         ];
     }
