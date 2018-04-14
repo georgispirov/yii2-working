@@ -1,8 +1,8 @@
 <?php
 
-namespace app\models;
+namespace app\models\forms;
 
-use app\components\EmailAfterRegisterBehavior;
+use app\models\Users;
 use Yii;
 use yii\base\Model;
 

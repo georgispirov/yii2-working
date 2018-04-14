@@ -1,10 +1,11 @@
 <?php
 
-namespace app\models;
+namespace app\models\forms;
 
+use app\models\Users;
 use Yii;
 use yii\base\Model;
-use yii\helpers\VarDumper;
+
 
 class LoginForm extends Model
 {

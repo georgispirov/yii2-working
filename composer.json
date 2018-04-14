@@ -25,7 +25,8 @@
         "menarasolutions/geographer-es": "^0.1.0",
         "menarasolutions/geographer": "^0.3.4",
         "kartik-v/yii2-widget-depdrop": "@dev",
-        "kartik-v/yii2-widget-sidenav": "@dev"
+        "kartik-v/yii2-widget-sidenav": "@dev",
+        "kartik-v/yii2-widget-growl": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

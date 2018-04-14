@@ -27,6 +27,7 @@ use yii\web\IdentityInterface;
  * @property string $re_password
  * @property string $email
  * @property integer $country_id
+ * @property string $avatar
  *
  * @property City $city
  * @property Country $country

@@ -1,6 +1,9 @@
 <?php
 
 use yii\helpers\Html;
+use yii\web\View;
+
+/* @var $this View */
 
 $this->beginPage(); ?>
 
@@ -14,6 +17,7 @@ $this->beginPage(); ?>
         <?= $this->head(); ?>
     </head>
 
+    <?= $this->render('homeLayoutPartials/headerContent'); ?>
     <?= $this->beginBody(); ?>
     <?= $content; ?>
     <?= $this->endBody(); ?>
